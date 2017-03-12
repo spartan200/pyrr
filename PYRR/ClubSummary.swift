@@ -8,6 +8,17 @@
 
 import Foundation
 
+/**
+ * Enum for the Sport Type.
+ */
+public enum SportType: String {
+    case Cycling = "cycling"
+    case Running = "running"
+    case Triathlon = "triathlon"
+    case Other = "other"
+}
+
+
 class ClubSummary: ClubMeta {
     // Profile picture for the club.  URL to a 60x60 pixel profile picture.
     var profileMedium: String?;
@@ -23,8 +34,7 @@ class ClubSummary: ClubMeta {
     
     // Sport Type for the club.
     // Values: cycling, runnning, triathlon, other.
-    // TODO: Should be an enum
-    var sportType: String?;
+    var sportType: SportType?;
     
     // City the club is in.
     var city: String?;

@@ -8,6 +8,22 @@
 
 import Foundation
 
+/**
+ * Sex of the Athlete
+ */
+public enum Sex: String {
+    case Male = "M"
+    case Female = "F"
+}
+
+/**
+ * Enum for the following status of the Athlete's friend
+ */
+public enum FollowingStatus: String {
+    case Pending = "pending"
+    case Accepted = "accepted"
+    case Blocked = "blocked"
+}
 class AthleteSummary: AthleteMeta {
     // First name of the athlete
     var firstName: String?;
@@ -32,18 +48,15 @@ class AthleteSummary: AthleteMeta {
     
     // The sex of the athlete. 
     // Values: 'M', 'F' or null
-    // TODO: Should be enum
-    var sex: String?;
+    var sex: Sex?;
     
     // The authenticated athlete's following status of this athlete.
     // Values: 'pending', 'accepted', 'blocked' or 'null'.
-    // TODO: Should be enum
-    var friend: String?;
+    var friend: FollowingStatus?;
     
     // The athlete's following status of the authenticated athlete.
     // Values: 'pending', 'accepted', 'blocked' or 'null'.
-    // TODO: Should be enum
-    var follower: String?;
+    var follower: FollowingStatus?;
     
     // Boolean value for whether or not the athlete has a premium account.
     var premium = false;

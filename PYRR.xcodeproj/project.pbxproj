@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D93148051E75EB7600E10188 /* Requestor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93148041E75EB7600E10188 /* Requestor.swift */; };
 		D9CF4A741E6376B20053FC3D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CF4A731E6376B20053FC3D /* AppDelegate.swift */; };
 		D9CF4A761E6376B20053FC3D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CF4A751E6376B20053FC3D /* ViewController.swift */; };
 		D9CF4A791E6376B20053FC3D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9CF4A771E6376B20053FC3D /* Main.storyboard */; };
@@ -33,6 +34,7 @@
 		D9FCDBB91E74B5540063ECC2 /* ActivityMeta.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FCDBB81E74B5540063ECC2 /* ActivityMeta.swift */; };
 		D9FCDBBB1E74B7080063ECC2 /* SplitSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FCDBBA1E74B7080063ECC2 /* SplitSummary.swift */; };
 		D9FCDBBD1E74B7C70063ECC2 /* PhotoSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FCDBBC1E74B7C70063ECC2 /* PhotoSummary.swift */; };
+		D9FCDBBF1E74BC810063ECC2 /* StravaBroker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FCDBBE1E74BC810063ECC2 /* StravaBroker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D93148041E75EB7600E10188 /* Requestor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Requestor.swift; sourceTree = "<group>"; };
 		D9CF4A701E6376B20053FC3D /* PYRR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PYRR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9CF4A731E6376B20053FC3D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D9CF4A751E6376B20053FC3D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -85,6 +88,7 @@
 		D9FCDBB81E74B5540063ECC2 /* ActivityMeta.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityMeta.swift; sourceTree = "<group>"; };
 		D9FCDBBA1E74B7080063ECC2 /* SplitSummary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplitSummary.swift; sourceTree = "<group>"; };
 		D9FCDBBC1E74B7C70063ECC2 /* PhotoSummary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoSummary.swift; sourceTree = "<group>"; };
+		D9FCDBBE1E74BC810063ECC2 /* StravaBroker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StravaBroker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +187,7 @@
 		D9FCDB951E74931A0063ECC2 /* Strava */ = {
 			isa = PBXGroup;
 			children = (
+				D9FCDBC01E74BE290063ECC2 /* Third Party Libraries */,
 				D9FCDB971E74932C0063ECC2 /* Brokers */,
 				D9FCDB961E7493260063ECC2 /* Business */,
 			);
@@ -218,8 +223,17 @@
 		D9FCDB971E74932C0063ECC2 /* Brokers */ = {
 			isa = PBXGroup;
 			children = (
+				D9FCDBBE1E74BC810063ECC2 /* StravaBroker.swift */,
+				D93148041E75EB7600E10188 /* Requestor.swift */,
 			);
 			name = Brokers;
+			sourceTree = "<group>";
+		};
+		D9FCDBC01E74BE290063ECC2 /* Third Party Libraries */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Third Party Libraries";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -365,12 +379,14 @@
 				D9FCDBA31E749FA90063ECC2 /* Club.swift in Sources */,
 				D9FCDB9F1E749DA90063ECC2 /* ClubMeta.swift in Sources */,
 				D9FCDBA51E74A1310063ECC2 /* GearSummary.swift in Sources */,
+				D93148051E75EB7600E10188 /* Requestor.swift in Sources */,
 				D9FCDBAF1E74AE730063ECC2 /* SegmentSummary.swift in Sources */,
 				D9FCDB9B1E7494DB0063ECC2 /* AthleteMeta.swift in Sources */,
 				D9FCDBB91E74B5540063ECC2 /* ActivityMeta.swift in Sources */,
 				D9FCDBB11E74B0FE0063ECC2 /* Map.swift in Sources */,
 				D9FCDB9D1E7495380063ECC2 /* AthleteSummary.swift in Sources */,
 				D9FCDBB31E74B1990063ECC2 /* SegmentEffortSummary.swift in Sources */,
+				D9FCDBBF1E74BC810063ECC2 /* StravaBroker.swift in Sources */,
 				D9FCDBB71E74B4E50063ECC2 /* LapSummary.swift in Sources */,
 				D9FCDBA91E74A4230063ECC2 /* Activity.swift in Sources */,
 				D9CF4A741E6376B20053FC3D /* AppDelegate.swift in Sources */,

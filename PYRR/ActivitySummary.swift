@@ -8,6 +8,28 @@
 
 import Foundation
 
+/**
+ * Enum for the type of activity
+ */
+public enum ActivityType: String {
+    case Ride = "ride"
+    case Run = "run"
+    case Swim = "swim"
+    case Etc = "etc"
+}
+
+/**
+ * Enum for the workout type
+ */
+public enum WorkoutType: Int {
+    case DefaultRun = 0
+    case RaceRun = 1
+    case LongRun = 2
+    case WorkoutRun = 3
+    case DefaultRide = 10
+    case RaceRide = 11
+    case WorkoutRide = 12
+}
 class ActivitySummary: ActivityMeta {
     // External id for the Activity.  Provided at upload.
     var externalId: String?;
@@ -47,8 +69,7 @@ class ActivitySummary: ActivityMeta {
     
     // The type of Activity.
     // Values: 'ride', 'run', 'swim', 'etc'.
-    // TODO: Should be an enum
-    var type: String?;
+    var type: ActivityType?;
     
     // Start date of the actitivity, UTC Time.
     var startDate: Date?;
@@ -107,8 +128,7 @@ class ActivitySummary: ActivityMeta {
     // The type of workout the Activity was.
     // Values for Run: 0->'default', 1->'race', 2->'long run', 3->'workout'
     // Values for Ride: 10->'default', 11->'race', 12->'workout'
-    // TODO: Should be an enum
-    var workoutType: Int?;
+    var workoutType: WorkoutType?;
     
     // Gear Id for the Activity.  Corresponds to a bike or pair of shoes included in athlete details.
     var gearId: Int?;

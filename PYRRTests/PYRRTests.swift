@@ -33,4 +33,15 @@ class PYRRTests: XCTestCase {
         }
     }
     
+    func testStrava() {
+        _ = self.expectation(description: "longRunningFunction");
+        
+        let stravaBroker = StravaBroker();
+        
+        stravaBroker.StravaBrokerTest();
+        
+        self.waitForExpectations(timeout: 5, handler: { error in
+        });
+    }
+    
 }

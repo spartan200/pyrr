@@ -20,8 +20,7 @@ class SegmentSummary {
     
     // Activity Type for the Segment.
     // Values: 'Ride' or 'Run'.
-    // TODO: Should be an enum.
-    var activityType: String?;
+    var activityType: ActivityType?;
     
     // Distance that is covered by the Segment.
     // Meters

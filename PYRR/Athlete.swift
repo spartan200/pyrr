@@ -8,6 +8,15 @@
 
 import Foundation
 
+/**
+ * Enum containing the different measurement preferences for an Athlete.
+ *
+ */
+public enum MeasurementPreference: String {
+    case Feet = "feet"
+    case Meter = "meters"
+}
+
 class Athlete: AthleteSummary {
     // The number of followers the Athlete has.
     var followerCount: Int?;
@@ -28,8 +37,7 @@ class Athlete: AthleteSummary {
     
     // The preferred unit of measurement for the Athlete.
     // Values: 'feet' or 'meters'
-    // TODO: Should be an enum.
-    var measurementPreference: String?;
+    var measurementPreference: MeasurementPreference?;
     
     // The email address for the Athlete.
     var email: String?;

@@ -8,19 +8,36 @@
 
 import Foundation
 
+/**
+ * Different Club Types
+ */
+public enum ClubType: String {
+    case CasualClub = "casual_club"
+    case RacingTeam = "racing_team"
+    case Shop = "shop"
+    case Company = "company"
+    case Other = "other"
+}
+
+/**
+ * Enum for the Club's membership status
+ */
+public enum MembershipStatus: String {
+    case Member = "member"
+    case Pending = "pending"
+}
+
 class Club: ClubSummary {
     // Description of the club
     var description: String?;
     
     // The type of club.
     // Values: 'casual_club', 'racing_team', 'shop', 'company', 'other'.
-    // TODO: Should be a enum.
-    var clubType: String?;
+    var clubType: ClubType?;
     
     // The membership status of the requesting athlete.
     // Values: 'member', 'pending', null (not a member and have not requested to join).
-    // TODO: Should be an enum
-    var membership: String?;
+    var membership: MembershipStatus?;
     
     // Whether or not the Athlete is a administrator for the club.
     // true only if the requesting athlete is a club admin.
