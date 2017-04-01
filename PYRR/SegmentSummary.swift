@@ -41,12 +41,10 @@ class SegmentSummary {
     var elevationLow: Float?;
     
     // Starting Latitude/Longitude of the Segment
-    // TODO Should be Lat/Lng Struct
-    var startLatLng: String?;
+    var startLatLng: StravaCoordinate?;
     
     // Ending Latitude/Longitude of the Segment
-    // TODO: Should be Lat/Lng Struct
-    var endLatLng: String?;
+    var endLatLng: StravaCoordinate?;
     
     // The climb category for the Segment.
     // ie: 5 is Hors categories, 0 is uncategorized.

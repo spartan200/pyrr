@@ -21,6 +21,7 @@ class PYRRTests: XCTestCase {
         super.tearDown()
     }
     
+    /*
     func testExample() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
@@ -31,14 +32,17 @@ class PYRRTests: XCTestCase {
         self.measure {
             // Put the code you want to measure the time of here.
         }
-    }
+    }*/
     
     func testStrava() {
         _ = self.expectation(description: "longRunningFunction");
         
-        let stravaBroker = StravaBroker();
+        let ne = StravaCoordinate(latitude: 49.172974, longitude: -123.996860);
+        let sw = StravaCoordinate(latitude: 49.146886, longitude: -124.013960);
+
+        let segmentBroker = SegmentBroker()
         
-        stravaBroker.StravaBrokerTest();
+        segmentBroker.startGetSegments(southWest: sw, northEast: ne, activityType: ActivityType.Ride)
         
         self.waitForExpectations(timeout: 5, handler: { error in
         });
