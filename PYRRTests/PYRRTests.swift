@@ -37,14 +37,16 @@ class PYRRTests: XCTestCase {
     func testStrava() {
         _ = self.expectation(description: "longRunningFunction");
         
-        let ne = StravaCoordinate(latitude: 49.172974, longitude: -123.996860);
-        let sw = StravaCoordinate(latitude: 49.146886, longitude: -124.013960);
+        //let ne = StravaCoordinate(latitude: 49.172974, longitude: -123.996860);
+        //let sw = StravaCoordinate(latitude: 49.146886, longitude: -124.013960);
+        let ne = StravaCoordinate(latitude: 49.2, longitude: -123.9);
+        let sw = StravaCoordinate(latitude: 49.15, longitude: -124.05);
 
         let segmentBroker = SegmentBroker()
         
         segmentBroker.startGetSegments(southWest: sw, northEast: ne, activityType: ActivityType.Ride)
         
-        self.waitForExpectations(timeout: 5, handler: { error in
+        self.waitForExpectations(timeout: 60, handler: { error in
         });
     }
     

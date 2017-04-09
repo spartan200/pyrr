@@ -40,7 +40,7 @@ class StravaBroker {
 
         let task = session.dataTask(with: request as URLRequest, completionHandler: {data, response, error in
             //let json:JSON = JSON(data: data);
-            print(NSString(data: data!, encoding: String.Encoding.utf8.rawValue) ?? "Nothing")
+            //print(NSString(data: data!, encoding: String.Encoding.utf8.rawValue) ?? "Nothing")
             onCompletion(data, error);
         })
         
