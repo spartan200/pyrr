@@ -14,4 +14,10 @@ class ActivityMeta {
     
     // The resource state for the activity
     var resourceState: Int?;
+    
+    /// - Initialize the object from the dictionary
+    init (fromDict: [String: Any]) {
+        self.activityId = fromDict["id"] as! Int?
+        self.resourceState = fromDict["resource_state"] as! Int?
+    }
 }

@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		D93148051E75EB7600E10188 /* Requestor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93148041E75EB7600E10188 /* Requestor.swift */; };
+		D9635AA41EA15C3200D15EB1 /* CFTBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9635AA31EA15C3200D15EB1 /* CFTBaseViewController.swift */; };
+		D9635AA61EA15C9400D15EB1 /* CFTHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9635AA51EA15C9400D15EB1 /* CFTHomeViewController.swift */; };
+		D9635AA81EA15D2500D15EB1 /* ActivityBroker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9635AA71EA15D2500D15EB1 /* ActivityBroker.swift */; };
+		D9635AAA1EA184F100D15EB1 /* LeaderboardEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9635AA91EA184F100D15EB1 /* LeaderboardEntry.swift */; };
+		D9635AAC1EA1850D00D15EB1 /* LeaderboardBroker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9635AAB1EA1850D00D15EB1 /* LeaderboardBroker.swift */; };
+		D9635AAE1EA186E800D15EB1 /* Leaderboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9635AAD1EA186E800D15EB1 /* Leaderboard.swift */; };
 		D98C230E1E903A0300CD41BC /* SegmentBroker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98C230D1E903A0300CD41BC /* SegmentBroker.swift */; };
 		D98C23101E903AAA00CD41BC /* StravaCoordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98C230F1E903AAA00CD41BC /* StravaCoordinate.swift */; };
 		D9CF4A741E6376B20053FC3D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CF4A731E6376B20053FC3D /* AppDelegate.swift */; };
@@ -58,6 +64,12 @@
 
 /* Begin PBXFileReference section */
 		D93148041E75EB7600E10188 /* Requestor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Requestor.swift; sourceTree = "<group>"; };
+		D9635AA31EA15C3200D15EB1 /* CFTBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CFTBaseViewController.swift; sourceTree = "<group>"; };
+		D9635AA51EA15C9400D15EB1 /* CFTHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CFTHomeViewController.swift; sourceTree = "<group>"; };
+		D9635AA71EA15D2500D15EB1 /* ActivityBroker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityBroker.swift; sourceTree = "<group>"; };
+		D9635AA91EA184F100D15EB1 /* LeaderboardEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaderboardEntry.swift; sourceTree = "<group>"; };
+		D9635AAB1EA1850D00D15EB1 /* LeaderboardBroker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaderboardBroker.swift; sourceTree = "<group>"; };
+		D9635AAD1EA186E800D15EB1 /* Leaderboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Leaderboard.swift; sourceTree = "<group>"; };
 		D98C230D1E903A0300CD41BC /* SegmentBroker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentBroker.swift; sourceTree = "<group>"; };
 		D98C230F1E903AAA00CD41BC /* StravaCoordinate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StravaCoordinate.swift; sourceTree = "<group>"; };
 		D9CF4A701E6376B20053FC3D /* PYRR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PYRR.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -120,6 +132,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D9635AA21EA15C1A00D15EB1 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				D9635AA31EA15C3200D15EB1 /* CFTBaseViewController.swift */,
+				D9635AA51EA15C9400D15EB1 /* CFTHomeViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
 		D9CF4A671E6376B10053FC3D = {
 			isa = PBXGroup;
 			children = (
@@ -143,6 +164,7 @@
 		D9CF4A721E6376B20053FC3D /* PYRR */ = {
 			isa = PBXGroup;
 			children = (
+				D9635AA21EA15C1A00D15EB1 /* ViewControllers */,
 				D9FCDB951E74931A0063ECC2 /* Strava */,
 				D9FCDB941E74930F0063ECC2 /* Brokers */,
 				D9FCDB931E7493000063ECC2 /* Business */,
@@ -221,6 +243,8 @@
 				D9FCDBBA1E74B7080063ECC2 /* SplitSummary.swift */,
 				D9FCDBBC1E74B7C70063ECC2 /* PhotoSummary.swift */,
 				D98C230F1E903AAA00CD41BC /* StravaCoordinate.swift */,
+				D9635AA91EA184F100D15EB1 /* LeaderboardEntry.swift */,
+				D9635AAD1EA186E800D15EB1 /* Leaderboard.swift */,
 			);
 			name = Business;
 			sourceTree = "<group>";
@@ -231,6 +255,8 @@
 				D9FCDBBE1E74BC810063ECC2 /* StravaBroker.swift */,
 				D93148041E75EB7600E10188 /* Requestor.swift */,
 				D98C230D1E903A0300CD41BC /* SegmentBroker.swift */,
+				D9635AA71EA15D2500D15EB1 /* ActivityBroker.swift */,
+				D9635AAB1EA1850D00D15EB1 /* LeaderboardBroker.swift */,
 			);
 			name = Brokers;
 			sourceTree = "<group>";
@@ -376,24 +402,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9635AAE1EA186E800D15EB1 /* Leaderboard.swift in Sources */,
 				D9CF4A761E6376B20053FC3D /* ViewController.swift in Sources */,
 				D9FCDBAD1E74AD980063ECC2 /* Segment.swift in Sources */,
 				D9FCDBB51E74B4200063ECC2 /* SegmentEffort.swift in Sources */,
 				D9FCDBA11E749DF70063ECC2 /* ClubSummary.swift in Sources */,
 				D9FCDBA71E74A1D50063ECC2 /* Gear.swift in Sources */,
+				D9635AA81EA15D2500D15EB1 /* ActivityBroker.swift in Sources */,
 				D9FCDB991E74941F0063ECC2 /* Athlete.swift in Sources */,
 				D9FCDBA31E749FA90063ECC2 /* Club.swift in Sources */,
 				D98C23101E903AAA00CD41BC /* StravaCoordinate.swift in Sources */,
 				D9FCDB9F1E749DA90063ECC2 /* ClubMeta.swift in Sources */,
 				D9FCDBA51E74A1310063ECC2 /* GearSummary.swift in Sources */,
 				D93148051E75EB7600E10188 /* Requestor.swift in Sources */,
+				D9635AAC1EA1850D00D15EB1 /* LeaderboardBroker.swift in Sources */,
 				D9FCDBAF1E74AE730063ECC2 /* SegmentSummary.swift in Sources */,
 				D9FCDB9B1E7494DB0063ECC2 /* AthleteMeta.swift in Sources */,
+				D9635AA61EA15C9400D15EB1 /* CFTHomeViewController.swift in Sources */,
 				D9FCDBB91E74B5540063ECC2 /* ActivityMeta.swift in Sources */,
 				D9FCDBB11E74B0FE0063ECC2 /* Map.swift in Sources */,
 				D98C230E1E903A0300CD41BC /* SegmentBroker.swift in Sources */,
 				D9FCDB9D1E7495380063ECC2 /* AthleteSummary.swift in Sources */,
+				D9635AA41EA15C3200D15EB1 /* CFTBaseViewController.swift in Sources */,
 				D9FCDBB31E74B1990063ECC2 /* SegmentEffortSummary.swift in Sources */,
+				D9635AAA1EA184F100D15EB1 /* LeaderboardEntry.swift in Sources */,
 				D9FCDBBF1E74BC810063ECC2 /* StravaBroker.swift in Sources */,
 				D9FCDBB71E74B4E50063ECC2 /* LapSummary.swift in Sources */,
 				D9FCDBA91E74A4230063ECC2 /* Activity.swift in Sources */,

@@ -58,11 +58,11 @@ class SegmentEffortSummary {
     
     // Average Watts produced during the Segment effort.
     // Rides only
-    var averageWattts: Float?;
+    var averageWatts: Float?;
     
     // Device was used to measure the watts.
     // Rides only
-    var deviceWatts: Float?;
+    var deviceWatts: Bool?;
     
     // Average heart rate of the Athlete while performing the Segment Effort
     // BPM, missing if not provided
@@ -86,4 +86,32 @@ class SegmentEffortSummary {
     // Indicates a hidden/non-important effort when returned as part of an activity,
     // value may change over time, see retrieve an activity for more details.
     var hidden: Bool?;
+    
+    /// - Initializes a new SegmentEffort object from the given dictionary
+    init(fromDict: [String : Any]) {
+        self.segmentEffortId = fromDict["id"] as! Int?
+        self.resourceState = fromDict["resource_state"] as! Int?
+        self.name = fromDict["name"] as! String?
+        // TODO: Need to load the activitry
+        // TODO: Need to load the athlete
+        self.elapsedTime = fromDict["elapsed_time"] as! Int?
+        self.movingTime = fromDict["moving_time"] as! Int?
+        // TODO: Need to load the start_date
+        // TODO: Need to load the start_date_local
+        self.distance = fromDict["distance"] as! Float?
+        self.startIndex = fromDict["start_index"] as! Int?
+        self.endIndex = fromDict["end_index"] as! Int?
+        self.averageCadence = fromDict["average_cadence"] as! Float?
+        self.averageWatts = fromDict["average_watts"] as! Float?
+        self.deviceWatts = fromDict["device_watts"] as! Bool?
+        self.averageHeartRate = fromDict["average_heartrate"] as! Float?
+        self.maxHeartRate = fromDict["max_heartrate"] as! Float?
+        // TODO: Need to load the segment
+        if (fromDict["segment"] != nil) {
+            // Create the segment from the dictionary of the segment ids
+            self.segment = Segment(fromDict: fromDict["segment"] as! [String: Any])
+        }
+        self.komRank = fromDict["kom_rank"] as? Int
+        self.prRank = fromDict["pr_rank"] as? Int
+    }
 }

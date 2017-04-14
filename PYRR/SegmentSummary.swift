@@ -10,7 +10,7 @@ import Foundation
 
 class SegmentSummary {
     // Unique Id of the Segment
-    var segmentId: Int?;
+    var segmentId: Int64?;
     
     // Resource state of the Segment
     var resourceState: Int?;

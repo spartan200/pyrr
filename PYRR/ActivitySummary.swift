@@ -57,7 +57,7 @@ class ActivitySummary: ActivityMeta {
     
     // Total elevation that was gained during the Activity.
     // Meters.
-    var totalElavationGain: Float?;
+    var totalElevationGain: Float?;
     
     // The highest point of elevation during the Activity.
     // Meters
@@ -169,11 +169,52 @@ class ActivitySummary: ActivityMeta {
     var averageHeartRate: Float?;
     
     // The maximum heart rate reached by the Athlete during the Activity.
-    var maxHeartRate: Int?;
+    var maxHeartRate: Float?;
     
     // A measure of heart rate intensity, available on premimum users' activities only
     var sufferScore: Int?;
     
     // True/False depending if the authenticated user has kudoed the activity.
     var hasKudoed: Bool?;
+    
+    /// - Initialize the Activity Summary object from a dictionary
+    override init(fromDict: [String: Any]) {
+        super.init(fromDict: fromDict)
+        
+        self.externalId = fromDict["external_id"] as! String?
+        self.uploadId = fromDict["upload_id"] as! Int?
+        // TODO: Athlete need to implement
+        //self.athlete =
+        self.name = fromDict["name"] as! String?
+        self.distance = fromDict["distance"] as! Float?
+        self.movingTime = fromDict["moving_time"] as! Int?
+        self.elapsedTime = fromDict["elapsed_time"] as! Int?
+        self.totalElevationGain = fromDict["total_elevation_gain"] as! Float?
+        // TODO: Need to load type
+        // TODO: Need to load start date
+        // TODO: Need to load start date local
+        self.timezone = fromDict["timezone"] as! String?
+        // TODO: Need to load start_latlng
+        // TODO: Need to load end_latlng
+        self.achievementCount = fromDict["achievement_count"] as! Int?
+        self.kudosCount = fromDict["kudos_count"] as! Int?
+        self.commentCount = fromDict["comment_count"] as! Int?
+        self.athleteCount = fromDict["athlete_count"] as! Int?
+        self.photoCount = fromDict["photo_count"] as! Int?
+        self.totalPhotoCount = fromDict["total_photo_count"] as! Int?
+        // TODO: Need to load map
+        self.trainer = fromDict["trainer"] as! Bool?
+        self.commute = fromDict["commute"] as! Bool?
+        self.manual = fromDict["manual"] as! Bool?
+        self.privateActivity = fromDict["private"] as! Bool?
+        self.flagged = fromDict["flagged"] as! Bool?
+        self.averageSpeed = fromDict["average_speed"] as! Float?
+        self.maxSpeed = fromDict["max_speed"] as! Float?
+        self.averageWatts = fromDict["average_watts"] as! Float?
+        self.maxWatts = fromDict["max_watts"] as! Float?
+        self.kilojoules = fromDict["kilojoules"] as! Float?
+        self.hasHeartrate = fromDict["has_heartrate"] as! Bool?
+        self.averageHeartRate = fromDict["average_heart_rate"] as! Float?
+        self.maxHeartRate = fromDict["max_heart_date"] as! Float?
+    }
 }

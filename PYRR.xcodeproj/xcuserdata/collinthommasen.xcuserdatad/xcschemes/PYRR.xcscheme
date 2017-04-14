@@ -37,6 +37,11 @@
                BlueprintName = "PYRRTests"
                ReferencedContainer = "container:PYRR.xcodeproj">
             </BuildableReference>
+            <SkippedTests>
+               <Test
+                  Identifier = "PYRRTests/testStrava()">
+               </Test>
+            </SkippedTests>
          </TestableReference>
          <TestableReference
             skipped = "NO">

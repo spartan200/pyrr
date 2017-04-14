@@ -29,8 +29,11 @@ class StravaBroker {
     // The base URL to the Strava API
     let baseURL = "https://www.strava.com/api/v3/";
     
-    func makeHTTPGetRequest(requestName: String, parameters: [String: AnyObject], onCompletion: @escaping ServiceResponse) {
-        let parameterString = parameters.stringFromHttpParameters()
+    func makeHTTPGetRequest(requestName: String, parameters: [String: AnyObject]?, onCompletion: @escaping ServiceResponse) {
+        var parameterString = ""
+        if (parameters != nil) {
+            parameterString = parameters!.stringFromHttpParameters()
+        }
         let requestURL = NSURL(string: "\(baseURL)\(requestName)?\(parameterString)")!
         let request = NSMutableURLRequest(url: requestURL as URL)
         request.httpMethod = "GET"

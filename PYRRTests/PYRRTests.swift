@@ -50,4 +50,20 @@ class PYRRTests: XCTestCase {
         });
     }
     
+    /// - Function that tests the get activity function
+    func testGetActivity() {
+        _ = self.expectation(description: "longRunningFunction")
+        
+        // Activity from my list of activities
+        let activityId = 935498796 as Int64
+        
+        let activityBroker = ActivityBroker()
+        
+        activityBroker.getRecord(activityId: activityId, onCompletion: {activity in
+            NSLog("Stop")
+        })
+        
+        self.waitForExpectations(timeout: 60, handler: { error in
+        })
+    }
 }

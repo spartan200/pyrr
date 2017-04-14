@@ -37,7 +37,7 @@ class Segment: SegmentSummary {
     init(fromDict: [String: Any]) {
         super.init()
         
-        self.segmentId = fromDict["id"] as! Int?
+        self.segmentId = fromDict["id"] as! Int64?
         self.name = fromDict["name"] as! String?
         self.climbCategory = fromDict["climb_category"] as! Int?
         //self.climbCategoryDesc = fromDict["climb_category_desc"]

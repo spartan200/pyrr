@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Activity {
+class Activity: ActivitySummary {
     
     // Calories the Athlete burned doing the Activity.
     // Kilocalories, uses kilojoules for rides and speed/pace for runs.
@@ -49,4 +49,33 @@ class Activity {
     // Photos that were taken for the activity.
     // Array of PhotoSummary objects.
     var photos: Array<PhotoSummary>?;
+    
+    /// - Intialize the Activity object from the given dictionary
+    override init(fromDict: [String: Any]) {
+        super.init(fromDict: fromDict)
+        
+        self.calories = fromDict["calories"] as! Float?
+        self.description = fromDict["description"] as? String
+        if (fromDict["segment_efforts"] != nil) {
+            self.segmentEfforts = SegmentEffort.parseSegmentEfforts(fromDictArr: fromDict["segment_efforts"] as! [[String : Any]])
+        }
+    }
+    
+    /// - Function returns an array of activities from the parsed data.
+    /// - If there is an issue with parsing the data the activity array will be Nil.
+    static func parseActivities(rawActivities: Data) -> [Activity] {
+        var activities = [Activity]()
+        
+        if let parsedData = try? JSONSerialization.jsonObject(with: rawActivities) as! [[String: Any]] {
+            for actDict in parsedData {
+                let activity = Activity(fromDict: actDict)
+                activities.append(activity)
+            }
+        } else {
+            // TODO: Need to handle when there is an error parsing the JSON
+            NSLog("bad json - do some recovery")
+        }
+        
+        return activities
+    }
 }
