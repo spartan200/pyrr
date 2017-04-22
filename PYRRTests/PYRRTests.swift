@@ -66,4 +66,55 @@ class PYRRTests: XCTestCase {
         self.waitForExpectations(timeout: 60, handler: { error in
         })
     }
+    
+    /// - Function that tests the get leaderboard function
+    func testLeaderboard() {
+        _ = self.expectation(description: "longRunningFunction");
+        
+        // Segment ID
+        let segmentId = 9520362 as Int
+        
+        let leaderboardBroker = LeaderboardBroker()
+        
+        leaderboardBroker.getRecords(segmentId: segmentId, onCompletion: { leaderboard in
+            NSLog("Stop")
+        })
+        
+        self.waitForExpectations(timeout: 60, handler: { error in
+        })
+    }
+    
+    /// - Function that tests the get effort function
+    func testSegmentEffort() {
+        _ = self.expectation(description: "longRunningFunction")
+        
+        // Segment Effort ID
+        let segmentEffortId = 22857193487 as Int64
+        
+        let segmentEffortBroker = SegmentEffortBroker()
+        
+        segmentEffortBroker.getRecord(segmentEffortId: segmentEffortId, onCompletion: { segmentEffort in
+            NSLog("Stop")
+        })
+        
+        self.waitForExpectations(timeout: 60, handler: { error in
+        })
+    }
+    
+    /// - Function that tests the get effort for a segment effort id
+    func testStreamBroker() {
+        _ = self.expectation(description: "longRunningFunction")
+        
+        // Segment Effort ID
+        //let segmentEffortId = 22857193487 as Int64 - My effort
+        let segmentEffortId = 9750127432 as Int64
+        
+        let streamBroker = StreamBroker()
+        
+        streamBroker.getSegmentEffortStreams(segmentEffortId: segmentEffortId, onCompletion: { streams in
+            NSLog("Stop")
+        })
+        
+        self.waitForExpectations(timeout: 60, handler: { error in })
+    }
 }

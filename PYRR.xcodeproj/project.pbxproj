@@ -16,6 +16,10 @@
 		D9635AAE1EA186E800D15EB1 /* Leaderboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9635AAD1EA186E800D15EB1 /* Leaderboard.swift */; };
 		D98C230E1E903A0300CD41BC /* SegmentBroker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98C230D1E903A0300CD41BC /* SegmentBroker.swift */; };
 		D98C23101E903AAA00CD41BC /* StravaCoordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98C230F1E903AAA00CD41BC /* StravaCoordinate.swift */; };
+		D9A9A7611EABEB7F00725F04 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A9A7601EABEB7F00725F04 /* Extensions.swift */; };
+		D9A9A7631EABEF8A00725F04 /* SegmentEffortBroker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A9A7621EABEF8A00725F04 /* SegmentEffortBroker.swift */; };
+		D9A9A7651EABF30B00725F04 /* StreamBroker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A9A7641EABF30B00725F04 /* StreamBroker.swift */; };
+		D9A9A7671EABF37D00725F04 /* Stream.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A9A7661EABF37D00725F04 /* Stream.swift */; };
 		D9CF4A741E6376B20053FC3D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CF4A731E6376B20053FC3D /* AppDelegate.swift */; };
 		D9CF4A761E6376B20053FC3D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CF4A751E6376B20053FC3D /* ViewController.swift */; };
 		D9CF4A791E6376B20053FC3D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9CF4A771E6376B20053FC3D /* Main.storyboard */; };
@@ -72,6 +76,10 @@
 		D9635AAD1EA186E800D15EB1 /* Leaderboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Leaderboard.swift; sourceTree = "<group>"; };
 		D98C230D1E903A0300CD41BC /* SegmentBroker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentBroker.swift; sourceTree = "<group>"; };
 		D98C230F1E903AAA00CD41BC /* StravaCoordinate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StravaCoordinate.swift; sourceTree = "<group>"; };
+		D9A9A7601EABEB7F00725F04 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		D9A9A7621EABEF8A00725F04 /* SegmentEffortBroker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentEffortBroker.swift; sourceTree = "<group>"; };
+		D9A9A7641EABF30B00725F04 /* StreamBroker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamBroker.swift; sourceTree = "<group>"; };
+		D9A9A7661EABF37D00725F04 /* Stream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stream.swift; sourceTree = "<group>"; };
 		D9CF4A701E6376B20053FC3D /* PYRR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PYRR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9CF4A731E6376B20053FC3D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D9CF4A751E6376B20053FC3D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -199,6 +207,7 @@
 		D9FCDB931E7493000063ECC2 /* Business */ = {
 			isa = PBXGroup;
 			children = (
+				D9A9A7601EABEB7F00725F04 /* Extensions.swift */,
 			);
 			name = Business;
 			sourceTree = "<group>";
@@ -245,6 +254,7 @@
 				D98C230F1E903AAA00CD41BC /* StravaCoordinate.swift */,
 				D9635AA91EA184F100D15EB1 /* LeaderboardEntry.swift */,
 				D9635AAD1EA186E800D15EB1 /* Leaderboard.swift */,
+				D9A9A7661EABF37D00725F04 /* Stream.swift */,
 			);
 			name = Business;
 			sourceTree = "<group>";
@@ -257,6 +267,8 @@
 				D98C230D1E903A0300CD41BC /* SegmentBroker.swift */,
 				D9635AA71EA15D2500D15EB1 /* ActivityBroker.swift */,
 				D9635AAB1EA1850D00D15EB1 /* LeaderboardBroker.swift */,
+				D9A9A7621EABEF8A00725F04 /* SegmentEffortBroker.swift */,
+				D9A9A7641EABF30B00725F04 /* StreamBroker.swift */,
 			);
 			name = Brokers;
 			sourceTree = "<group>";
@@ -402,6 +414,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9A9A7651EABF30B00725F04 /* StreamBroker.swift in Sources */,
 				D9635AAE1EA186E800D15EB1 /* Leaderboard.swift in Sources */,
 				D9CF4A761E6376B20053FC3D /* ViewController.swift in Sources */,
 				D9FCDBAD1E74AD980063ECC2 /* Segment.swift in Sources */,
@@ -429,10 +442,13 @@
 				D9FCDBBF1E74BC810063ECC2 /* StravaBroker.swift in Sources */,
 				D9FCDBB71E74B4E50063ECC2 /* LapSummary.swift in Sources */,
 				D9FCDBA91E74A4230063ECC2 /* Activity.swift in Sources */,
+				D9A9A7611EABEB7F00725F04 /* Extensions.swift in Sources */,
+				D9A9A7631EABEF8A00725F04 /* SegmentEffortBroker.swift in Sources */,
 				D9CF4A741E6376B20053FC3D /* AppDelegate.swift in Sources */,
 				D9FCDBAB1E74A6B40063ECC2 /* ActivitySummary.swift in Sources */,
 				D9FCDBBB1E74B7080063ECC2 /* SplitSummary.swift in Sources */,
 				D9FCDBBD1E74B7C70063ECC2 /* PhotoSummary.swift in Sources */,
+				D9A9A7671EABF37D00725F04 /* Stream.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

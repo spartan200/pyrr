@@ -39,6 +39,15 @@
             </BuildableReference>
             <SkippedTests>
                <Test
+                  Identifier = "PYRRTests/testGetActivity()">
+               </Test>
+               <Test
+                  Identifier = "PYRRTests/testLeaderboard()">
+               </Test>
+               <Test
+                  Identifier = "PYRRTests/testSegmentEffort()">
+               </Test>
+               <Test
                   Identifier = "PYRRTests/testStrava()">
                </Test>
             </SkippedTests>
