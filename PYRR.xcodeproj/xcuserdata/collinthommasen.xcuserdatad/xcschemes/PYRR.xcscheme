@@ -50,6 +50,9 @@
                <Test
                   Identifier = "PYRRTests/testStrava()">
                </Test>
+               <Test
+                  Identifier = "PYRRTests/testStreamBroker()">
+               </Test>
             </SkippedTests>
          </TestableReference>
          <TestableReference

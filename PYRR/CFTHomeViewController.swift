@@ -53,7 +53,11 @@ class CFTHomeViewController: CFTBaseViewController, UITableViewDataSource, UITab
         return 30
     }
     
-    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return activities.count
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: "OneToTwo", sender: self)
     }
 }

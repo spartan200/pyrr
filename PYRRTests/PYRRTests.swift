@@ -1,4 +1,4 @@
-//
+ //
 //  PYRRTests.swift
 //  PYRRTests
 //
@@ -116,5 +116,18 @@ class PYRRTests: XCTestCase {
         })
         
         self.waitForExpectations(timeout: 60, handler: { error in })
+    }
+    
+    /// - Function creates the databases and inserts the segments from the server
+    func testSegmentBroker() {
+        _ = self.expectation(description: "longRunningFunction")
+        
+        let segmentSummaryBroker = CFTSegmentSummaryBroker()
+        
+        segmentSummaryBroker.createTable()
+        
+        let segmentBroker = CFTSegmentBroker()
+        segmentBroker.createTable()
+        
     }
 }
