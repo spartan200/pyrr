@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SQLite
 
 class Segment: SegmentSummary {
     // Date time the Segment was created.
@@ -17,14 +18,14 @@ class Segment: SegmentSummary {
     
     // Total elevation that is gained during the Segment.
     // Meters
-    var totalElevationGain: Float?;
+    var totalElevationGain: Double?;
     
     // Map object for the Segment.
     // Inlcudes a summary polyline.
     var map: Map?;
     
     // Number of attempts for the Segment.
-    var efforCount: Int?;
+    var effortCount: Int?;
     
     // Number of unique Athletes that have attempted the segment.
     var athleteCount: Int?;
@@ -34,28 +35,22 @@ class Segment: SegmentSummary {
     
     /// Function that initializes a Segment object from a dictionary of 
     /// Any values and String for the key
-    init(fromDict: [String: Any]) {
-        super.init()
+    override init(fromDict: [String: Any]) {
+        super.init(fromDict: fromDict)
         
-        self.segmentId = fromDict["id"] as! Int64?
-        self.name = fromDict["name"] as! String?
-        self.climbCategory = fromDict["climb_category"] as! Int?
-        //self.climbCategoryDesc = fromDict["climb_category_desc"]
-        self.averageGrade = fromDict["avg_grade"] as! Float?
-        // Add the Start Lat/Lng
-        var latLng = fromDict["start_latlng"] as! [Double]?
-        if (latLng != nil) {
-            self.startLatLng = StravaCoordinate(latitude: (latLng?[0])!, longitude: (latLng?[1])!)
+        if (fromDict["created_at"] as? String != nil) {
+            self.createdAt = Date(jsonDate: fromDict["created_at"] as! String)
         }
         
-        // Add the End Lat/Lng
-        latLng = fromDict["end_latlng"] as! [Double]?
-        if (latLng != nil) {
-            self.endLatLng = StravaCoordinate(latitude: (latLng?[0])!, longitude: (latLng?[1])!)
+        if (fromDict["updated_at"] as? String != nil) {
+            self.updatedAt = Date(jsonDate: fromDict["updated_at"] as! String)   
         }
-        
-        // TODO: Elevation Difference
-        self.distance = fromDict["distance"] as! Float?
+        self.totalElevationGain = fromDict["total_elevation_gain"] as! Double?
+        //TODO Need to handle the map
+        //self.map =
+        self.effortCount = fromDict["effort_count"] as! Int?
+        self.athleteCount = fromDict["athlete_count"] as! Int?
+        self.starCount = fromDict["star_count"] as! Int?
     }
     
     /// Function that parses the given data into a array of segments
@@ -75,5 +70,83 @@ class Segment: SegmentSummary {
         }
         
         return segments
+    }
+    
+    /// Function returns the insert parameters for inserting into the segment table
+    final func toInsertSegmentParams() -> [Binding?] {
+        var params = [Binding?]()
+        
+        params.append(self.segmentId)
+        if (self.createdAt == nil) {
+            params.append(nil)
+        } else {
+            params.append((self.createdAt as! Binding))
+        }
+        if (self.updatedAt == nil) {
+            params.append(nil)
+        } else {
+            params.append((self.updatedAt as! Binding))
+        }
+        if (self.totalElevationGain == nil) {
+            params.append(nil)
+        } else {
+            params.append((self.totalElevationGain as! Binding))
+        }
+        if (self.effortCount == nil) {
+            params.append(nil)
+        } else {
+            params.append((self.effortCount as! Binding))
+        }
+        if (self.athleteCount == nil) {
+            params.append(nil)
+        } else {
+            params.append((self.athleteCount as! Binding))
+        }
+        if (self.starCount == nil) {
+            params.append(nil)
+        } else {
+            params.append((self.starCount as! Binding))
+        }
+        
+        return params
+    }
+    
+    /// Function returns the update params for the segment table update segment
+    final func toUpdateSegmentParams() -> [Binding?] {
+        var params = [Binding?]()
+        
+        if (self.createdAt == nil) {
+            params.append(nil)
+        } else {
+            params.append((self.createdAt as! Binding))
+        }
+        if (self.updatedAt == nil) {
+            params.append(nil)
+        } else {
+            params.append((self.updatedAt as! Binding))
+        }
+        if (self.totalElevationGain == nil) {
+            params.append(nil)
+        } else {
+            params.append((self.totalElevationGain as! Binding))
+        }
+        if (self.effortCount == nil) {
+            params.append(nil)
+        } else {
+            params.append((self.effortCount as! Binding))
+        }
+        if (self.athleteCount == nil) {
+            params.append(nil)
+        } else {
+            params.append((self.athleteCount as! Binding))
+        }
+        if (self.starCount == nil) {
+            params.append(nil)
+        } else {
+            params.append((self.starCount as! Binding))
+        }
+        params.append(self.segmentId)
+        
+        return params
     }
 }

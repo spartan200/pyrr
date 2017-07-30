@@ -16,7 +16,7 @@ class CFTSegmentSummaryBroker: CFTRelationalBroker
         let segmentSummary = Table("segment_summary")
         
         let segmentId = Expression<Int64>("id")
-        let resourceId = Expression<Int64>("resource_id")
+        let resourceState = Expression<Int64>("resource_state")
         let name = Expression<String>("name")
         // TODO: ActivityType
         let distance = Expression<Double>("distance")
@@ -32,13 +32,13 @@ class CFTSegmentSummaryBroker: CFTRelationalBroker
         let city = Expression<String?>("city")
         let state = Expression<String?>("state")
         let country = Expression<String?>("country")
-        let privateSegment = Expression<Bool>("private_segment")
-        let starred = Expression<Bool>("starred")
-        let hazardoues = Expression<Bool>("hazardoues")
+        let privateSegment = Expression<Bool?>("private_segment")
+        let starred = Expression<Bool?>("starred")
+        let hazardous = Expression<Bool?>("hazardous")
         
         return createTable(sqlStmt: segmentSummary.create { t in
             t.column(segmentId, primaryKey: true)
-            t.column(resourceId)
+            t.column(resourceState)
             t.column(name)
             t.column(distance)
             t.column(averageGrade)
@@ -55,7 +55,7 @@ class CFTSegmentSummaryBroker: CFTRelationalBroker
             t.column(country)
             t.column(privateSegment)
             t.column(starred)
-            t.column(hazardoues)
+            t.column(hazardous)
         })
     }
     
@@ -68,5 +68,39 @@ class CFTSegmentSummaryBroker: CFTRelationalBroker
     func insertRecords(segments: [Segment]) -> Bool {
         
         return false
+    }
+    
+    /// - Function tries to update a record in the segment_summary table.
+    ///   If the record doesn't exist then it is inserted.
+    static func upsertSegmentSummary(segmentSummary: SegmentSummary, db: Connection) {
+        let prevChanges = db.changes
+        let updateQuery = "UPDATE segment_summary SET resource_state = ?, name = ?, distance = ?, " +
+                                                     "average_grade = ?, maximum_grade = ?, elevation_high = ?, " +
+                                                     "elevation_low = ?, start_latitude = ?, start_longitude = ?, " +
+                                                     "end_latitude = ?, end_longitude = ?, climb_category = ?, " +
+                                                     "city = ?, state = ?, country = ?, private_segment = ?, " +
+                                                     "starred = ?, hazardous = ? " +
+                          "WHERE id = ?"
+        let stmt = try! db.prepare(updateQuery)
+        
+        var params: [Binding?] = segmentSummary.toUpdateSegmentSummaryParams();
+        
+        try! stmt.run(params)
+        
+        if ((db.changes - prevChanges) < 1) {
+            let insertQuery = "INSERT INTO segment_summary(id, resource_state, name, distance, " +
+                                                          "average_grade, maximum_grade, elevation_high, " +
+                                                          "elevation_low, start_latitude, start_longitude, " +
+                                                          "end_latitude, end_longitude, climb_category, " +
+                                                          "city, state, country, " +
+                                                          "private_segment, starred, hazardous)" +
+                              "VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
+            
+            // Nothing was updated so do the insert
+            let insertStmt = try! db.prepare(insertQuery)
+            params = segmentSummary.toInsertSegmentSummaryParams()
+            
+            try! insertStmt.run(params)
+        }
     }
 }

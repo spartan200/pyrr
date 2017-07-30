@@ -48,7 +48,8 @@ class SegmentBroker : StravaBroker
                 
                 if (self._recursiveCalls == 0) {
                     // We are all finished to alert the calling class that we are done
-                    NSLog("Finished")
+                    let cftSegmentBroker = CFTSegmentBroker()
+                    cftSegmentBroker.insertRecords(segments: segmentArr!)
                 }
             } else {
                 // Add 4 to keep track of the number of recursive calls we are making

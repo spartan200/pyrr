@@ -129,5 +129,16 @@ class PYRRTests: XCTestCase {
         let segmentBroker = CFTSegmentBroker()
         segmentBroker.createTable()
         
+        
+        // Get all the segments from the web server
+        let ne = StravaCoordinate(latitude: 49.2, longitude: -123.9);
+        let sw = StravaCoordinate(latitude: 49.15, longitude: -124.05);
+        
+        let stravaSegmentBroker = SegmentBroker()
+        
+        stravaSegmentBroker.startGetSegments(southWest: sw, northEast: ne, activityType: ActivityType.Ride)
+        
+        self.waitForExpectations(timeout: 60, handler: { error in
+        })
     }
 }
