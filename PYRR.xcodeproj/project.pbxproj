@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D9090B3F1F2EA79F00DED648 /* CFTMapVIewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9090B3E1F2EA79F00DED648 /* CFTMapVIewController.swift */; };
 		D93148051E75EB7600E10188 /* Requestor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93148041E75EB7600E10188 /* Requestor.swift */; };
 		D9635AA41EA15C3200D15EB1 /* CFTBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9635AA31EA15C3200D15EB1 /* CFTBaseViewController.swift */; };
 		D9635AA61EA15C9400D15EB1 /* CFTHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9635AA51EA15C9400D15EB1 /* CFTHomeViewController.swift */; };
@@ -121,6 +122,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D9090B3E1F2EA79F00DED648 /* CFTMapVIewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CFTMapVIewController.swift; sourceTree = "<group>"; };
 		D93148041E75EB7600E10188 /* Requestor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Requestor.swift; sourceTree = "<group>"; };
 		D9635AA31EA15C3200D15EB1 /* CFTBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CFTBaseViewController.swift; sourceTree = "<group>"; };
 		D9635AA51EA15C9400D15EB1 /* CFTHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CFTHomeViewController.swift; sourceTree = "<group>"; };
@@ -208,6 +210,7 @@
 				D9635AA31EA15C3200D15EB1 /* CFTBaseViewController.swift */,
 				D9635AA51EA15C9400D15EB1 /* CFTHomeViewController.swift */,
 				D9A9A7681EAC033000725F04 /* CFTMetalViewController.swift */,
+				D9090B3E1F2EA79F00DED648 /* CFTMapVIewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -578,6 +581,7 @@
 				D9FCDBA51E74A1310063ECC2 /* GearSummary.swift in Sources */,
 				D93148051E75EB7600E10188 /* Requestor.swift in Sources */,
 				D9A492F51EC8F74800BB9E73 /* CFTSegmentSummaryBroker.swift in Sources */,
+				D9090B3F1F2EA79F00DED648 /* CFTMapVIewController.swift in Sources */,
 				D9635AAC1EA1850D00D15EB1 /* LeaderboardBroker.swift in Sources */,
 				D9FCDBAF1E74AE730063ECC2 /* SegmentSummary.swift in Sources */,
 				D9FCDB9B1E7494DB0063ECC2 /* AthleteMeta.swift in Sources */,
